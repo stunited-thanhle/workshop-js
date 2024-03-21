@@ -1,0 +1,5 @@
+function haha() {
+  haha();
+}
+
+haha();

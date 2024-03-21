@@ -20,3 +20,34 @@ function getName(name) {
   await getName("Moc");
   await getName("Lan");
 })();
+
+// ----------------------------------
+
+async function getUsers() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  return res.json();
+}
+
+console.log((await getUsers())[0].id);
+console.log((await getUsers())[1].id);
+console.log((await getUsers())[2].id);
+console.log((await getUsers())[3].id);
+console.log((await getUsers())[4].id);
+
+function foo() {
+  console.log("foo");
+}
+
+function bar() {
+  console.log(foo(), "bar");
+}
+
+function far() {
+  console.log(bar(), "far");
+}
+
+function boo() {
+  console.log(far(), "boo");
+}
+
+boo();
